@@ -607,6 +607,13 @@ function cryptocurrencycheckout_config()
             'Default' => '',
             'Description' => 'Must Match CryptocurrencyCheckout Dashboard',
         ),
+        'dogecAddress' => array(
+            'FriendlyName' => 'DOGEC Address',
+            'Type' => 'text',
+            'Size' => '25',
+            'Default' => '',
+            'Description' => 'Must Match CryptocurrencyCheckout Dashboard'
+        ),
 
         'APIToken' => array(
             'FriendlyName' => 'API Token',
@@ -698,6 +705,7 @@ function cryptocurrencycheckout_link($params)
     $bnjAddress = $params['bnjAddress'];
     $usdtAddress = $params['usdtAddress'];
     $eggAddress = $params['eggAddress'];
+    $dogecAddress = $params['dogecAddress'];
 
     // Invoice Parameters
     $CC_invoiceId = $params['invoiceid'];
@@ -778,6 +786,7 @@ function cryptocurrencycheckout_link($params)
     $postfields['CC_BNJ_ADDRESS'] = $bnjAddress;
     $postfields['CC_USDT_ADDRESS'] = $usdtAddress;
     $postfields['CC_EGG_ADDRESS'] = $eggAddress;
+    $postfields['CC_DOGEC_ADDRESS'] = $dogeAddress;
 
     $htmlOutput = '<form method="POST" action="' . $url . '">';
     foreach ($postfields as $k => $v) {
